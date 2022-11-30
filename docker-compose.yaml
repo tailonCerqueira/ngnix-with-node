@@ -11,8 +11,6 @@ services:
     volumes:
       - ./node:/usr/src/app
     tty: true
-    ports:
-      - "8080:3000"
     depends_on:
       - db
       - nginx
@@ -24,7 +22,7 @@ services:
     build:
       context: nginx-conf
     ports:
-      - "80:80"
+      - "8080:80"
     networks: 
       - node-network
     hostname: nginx
